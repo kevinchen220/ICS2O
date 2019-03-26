@@ -1,0 +1,55 @@
+ float bx;
+ float by;
+ float bsize;
+ 
+ float wx;
+ float wy;
+ float wsize;
+void setup(){
+  
+ size(300,600); 
+ bx=0;
+ by=0;
+ bsize=20;
+ 
+ wx=0;
+ wy=600;
+ wsize=80;
+}
+void draw(){
+  //Middle line
+   stroke(76,191,147);
+   strokeWeight(4);
+   line(0,300,300,300);
+  
+  //black circles
+    fill(0,0,0);
+    stroke(255,255,255);
+    strokeWeight(0.75);
+    ellipse(bx,by,bsize,bsize);
+    bx=bx+1.5;
+    by=by+1.8;
+    bsize=bsize+0.2 ;
+    if (by>=300){
+      by=0;
+    }
+    if (bx>=300){
+      bx=0;
+      bsize=20;
+    }
+  //white circles
+    fill(255,255,255);
+    stroke(0,0,0);
+    strokeWeight(1);
+    ellipse(wx,wy,wsize,wsize);
+    wx=wx+1;
+    wy=wy-10;
+    wsize=wsize-1.5;
+    if (wy<=298){
+      wy=600;
+      wsize=80;
+    }
+    if (wx>=300){
+      wx=0;
+    }
+}
