@@ -1,0 +1,55 @@
+float by;
+
+PImage img;
+void setup(){
+  size(395,366);
+  background(35,143,244);
+  img = loadImage("unnamed.jpg");
+  
+  by=30;
+}
+
+void draw(){
+  //image(img,0,0);
+  
+  if (mousePressed){
+   //star
+   stroke(0);
+   noFill();
+   strokeWeight(10);
+   beginShape();
+   vertex(199,16);
+   vertex(141,75);
+   vertex(60,95);
+   vertex(82,175);
+   vertex(60,255);
+   vertex(141,275);
+   vertex(199,334);
+   endShape();
+   
+   //colour for star
+   noStroke();
+   fill(255,255,255);
+   beginShape();
+   vertex(199,21);
+   vertex(146,80);
+   vertex(65,100);
+   vertex(120,130);
+   vertex(199,85);
+   endShape();
+   
+   //middle black circle
+   fill(0,0,0);
+   stroke(0,0,0);
+   ellipse(199,173,180,180);
+   
+   //middle face
+   fill(255,190,34);
+   stroke(255,190,34);
+   arc(199,170,153,144,radians(180),radians(360));
+   
+   arc(199,170,153,130,0,PI);
+   rect(160,200,78,42,7);
+    }
+    
+}
