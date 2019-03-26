@@ -1,0 +1,55 @@
+float bx;
+float by;
+float bsize;
+
+float wx;
+float wy;
+float wsize;
+
+void setup(){
+ size(300,600);
+ background(204,204,204);
+ 
+ bx=0;
+ by=0;
+ bsize=20;
+ 
+ wx=150;
+ wy=600;
+ wsize=100;
+}
+
+void draw(){
+  //black pillar
+  ellipse(bx,by,bsize,bsize);
+  bx=bx+0.75;
+  by=by+1;
+  bsize=bsize+0.1;
+  
+  //white pillar
+  ellipse(wx,wy,wsize,wsize);
+  wx=wx+1;
+  wy=wy-15;
+  wsize=wsize-2;
+  
+  //reset
+  if (bx>=350){
+    bx=0;
+    by=0;
+    bsize=20;
+    wx=150;
+    wy=600;
+    wsize=100;
+    background(204,204,204);
+  }
+}
+  //int s = millis();
+  ////up going circle
+  //int x = 150 ; 
+  //int y = 650 ;
+  //ellipse(x+s/40,y-s/2,100-s/15,100-s/15);
+  
+  ////down going circle
+  //int a = -10 ;
+  //int b = -10 ;
+  //ellipse(a+s/24,b+s/17.45,15+s/175,15+s/175);
