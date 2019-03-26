@@ -1,0 +1,19 @@
+void setup() {
+  background(255,255,255);
+  size(800,600);
+}
+void draw() {
+   //Exercise 2a
+   fill(255,255,255);
+   ellipse(mouseX,mouseY,60,60);
+   
+   //Exercise 2b
+   float a=random(255);
+   float b=random(255);
+   float c=random(255);
+   float x=random(800);
+   float y=random(600);
+   fill(a,b,c);
+   ellipse(x,y,10,10);
+   
+}
