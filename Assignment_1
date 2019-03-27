@@ -1,55 +1,100 @@
-float by;
-
 PImage img;
 void setup(){
   size(395,366);
   background(35,143,244);
   img = loadImage("unnamed.jpg");
-  
-  by=30;
+ 
 }
 
 void draw(){
-  //image(img,0,0);
+  image(img,0,0);
   
   if (mousePressed){
    //star
    stroke(0);
    noFill();
-   strokeWeight(10);
+   strokeWeight(12);
    beginShape();
    vertex(199,16);
    vertex(141,75);
    vertex(60,95);
-   vertex(82,175);
+   vertex(83,175);
    vertex(60,255);
    vertex(141,275);
    vertex(199,334);
-   endShape();
+   vertex(257,275);
+   vertex(338,255);
+   vertex(315,175);
+   vertex(338,95);
+   vertex(257,75);
+   endShape(CLOSE);
    
    //colour for star
    noStroke();
    fill(255,255,255);
    beginShape();
-   vertex(199,21);
-   vertex(146,80);
-   vertex(65,100);
-   vertex(120,130);
-   vertex(199,85);
+   vertex(199,25);
+   vertex(145,81);
+   vertex(69,100);
+   vertex(199,176);
    endShape();
+   
+   fill(255,225,91);
+   beginShape();
+   vertex(68,100);
+   vertex(90,175);
+   vertex(68,251);
+   vertex(199,176);
+   endShape();
+   
+   fill(255,180,31);
+   beginShape();
+   vertex(68,251);
+   vertex(144,269);
+   vertex(199,325);
+   vertex(199,176);
+   endShape();
+   
+   fill(200,93,58);
+   beginShape();
+   vertex(199,325);
+   vertex(255,269);
+   vertex(331,251);
+   vertex(199,176);
+   endShape();
+   
+   fill(255,180,31);
+   beginShape();
+   vertex(330,250);
+   vertex(309,175);
+   vertex(331,100);
+   vertex(199,176);
+   endShape();
+   
+   fill(255,225,91);
+   beginShape();
+   vertex(331,100);
+   vertex(255,82);
+   vertex(199,25);
+   vertex(199,176);
+   endShape();
+   
+   //middle yellow circle
+   fill(255,225,91);
+   ellipse(199,176,188,188);
    
    //middle black circle
    fill(0,0,0);
    stroke(0,0,0);
-   ellipse(199,173,180,180);
+   ellipse(199,172,172,168);
    
    //middle face
    fill(255,190,34);
    stroke(255,190,34);
-   arc(199,170,153,144,radians(180),radians(360));
+   arc(199,171,142,136,radians(180),radians(360));
    
-   arc(199,170,153,130,0,PI);
-   rect(160,200,78,42,7);
+   arc(199,170,142,118,0,PI);
+   rect(165,200,68,37,5);
     }
     
 }
