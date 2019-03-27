@@ -92,9 +92,16 @@ void draw(){
    fill(255,190,34);
    stroke(255,190,34);
    arc(199,171,142,136,radians(180),radians(360));
-   
    arc(199,170,142,118,0,PI);
    rect(165,200,68,37,5);
+   
+   //eyes
+   fill(0,0,0);
+   noStroke();
+   ellipse(166,187,44.5,46);
+   ellipse(235,187,44.5,46);
+   
+   //eyebrow
     }
     
 }
