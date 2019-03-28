@@ -118,6 +118,12 @@ void draw(){
    
    //nose
    triangle(200,195,188,215,212,215);
+   
+   //light spot on head
+   rotate(radians(57));
+   fill(255,255,255);
+   ellipse(210,-50,35,55);
+   
    }
     
 }
