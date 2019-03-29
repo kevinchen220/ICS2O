@@ -1,4 +1,4 @@
-
+float x=0;
 PImage img;
 void setup(){
   size(395,366);
@@ -8,10 +8,10 @@ void setup(){
 }
 
 void draw(){
-  image(img,0,0);
-  
-  if (mousePressed){
+  //image(img,0,0);
+ 
    //star
+   translate(199,176);
    stroke(0);
    noFill();
    strokeWeight(12);
@@ -80,6 +80,7 @@ void draw(){
    vertex(199,176);
    endShape();
    
+  
    //middle yellow circle
    fill(255,225,91);
    ellipse(199,176,188,188);
@@ -113,18 +114,19 @@ void draw(){
    rect(261,-44,10.5,14);
    ellipse(266.25,-44,10.5,10.5);
    ellipse(266.25,-30,10.5,10.5);
-   
-   //reset rotation to 0
-   rotate(radians(-45));
-   
-   //nose
-   triangle(200,195,188,215,212,215);
-   
+     
    //light spot on head
-   rotate(radians(57));
+   rotate(radians(12));
    fill(255,255,255);
    ellipse(201,-68,36,54);
+  
+  //reset rotation to 0
+   rotate(radians(-57));
    
-   }
-    
+   //nose
+   fill(0);
+   triangle(200,195,188,215,212,215);
+   
+   
+   
 }
