@@ -1,3 +1,4 @@
+
 PImage img;
 void setup(){
   size(395,366);
@@ -122,7 +123,7 @@ void draw(){
    //light spot on head
    rotate(radians(57));
    fill(255,255,255);
-   ellipse(210,-50,35,55);
+   ellipse(201,-68,36,54);
    
    }
     
