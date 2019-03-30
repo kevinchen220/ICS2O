@@ -2,165 +2,20 @@ float x=0;
 PImage img;
 void setup(){
   size(395,366);
-  background(35,143,244);
-  img = loadImage("unnamed.jpg");
- 
-}
-
-void draw(){
-  //image(img,0,0);
- 
-   //star
-   translate(199,176);
-   stroke(0);
-   noFill();
-   strokeWeight(12);
-   beginShape();
-   vertex(199,16);
-   vertex(141,75);
-   vertex(60,95);
-   vertex(83,175);
-   vertex(60,255);
-   vertex(141,275);
-   vertex(199,334);
-   vertex(257,275);
-   vertex(338,255);
-   vertex(315,175);
-   vertex(338,95);
-   vertex(257,75);
-   endShape(CLOSE);
-   
-   //colour for star
-   noStroke();
-   fill(255,255,255);
-   beginShape();
-   vertex(199,25);
-   vertex(145,81);
-   vertex(69,100);
-   vertex(199,176);
-   endShape();
-   
-   fill(255,225,91);
-   beginShape();
-   vertex(68,100);
-   vertex(90,175);
-   vertex(68,251);
-   vertex(199,176);
-   endShape();
-   
-   fill(255,180,31);
-   beginShape();
-   vertex(68,251);
-   vertex(144,269);
-   vertex(199,325);
-   vertex(199,176);
-   endShape();
-   
-   fill(200,93,58);
-   beginShape();
-   vertex(199,325);
-   vertex(255,269);
-   vertex(331,251);
-   vertex(199,176);
-   endShape();
-   
-   fill(255,180,31);
-   beginShape();
-   vertex(330,250);
-   vertex(309,175);
-   vertex(331,100);
-   vertex(199,176);
-   endShape();
-   
-   fill(255,225,91);
-   beginShape();
-   vertex(331,100);
-   vertex(255,82);
-   vertex(199,25);
-   vertex(199,176);
-   endShape();
-   
-  
-   //middle yellow circle
-   fill(255,225,91);
-   ellipse(199,176,188,188);
-   
-   //middle black circle
-   fill(0,0,0);
-   stroke(0,0,0);
-   ellipse(199,172,172,168);
-   
-   //middle face
-   fill(255,190,34);
-   stroke(255,190,34);
-   arc(199,171,142,136,radians(180),radians(360));
-   arc(199,170,142,118,0,PI);
-   rect(165,200,68,37,5);
-   
-   //eyes
-   fill(0,0,0);
-   noStroke();
-   ellipse(166,187,44.5,46);
-   ellipse(235,187,44.5,46);
-   
-   //eyebrows
-   rotate(radians(44));
-   fill(0,0,0);
-   rect(239,-17.5,14,10.5);
-   ellipse(239,-12.25,10.5,10.5);
-   ellipse(253,-12.25,10.5,10.5);
-   
-   rotate(radians(1));
-   rect(261,-44,10.5,14);
-   ellipse(266.25,-44,10.5,10.5);
-   ellipse(266.25,-30,10.5,10.5);
-     
-   //light spot on head
-   rotate(radians(12));
-   fill(255,255,255);
-   ellipse(201,-68,36,54);
-  
-  //reset rotation to 0
-   rotate(radians(-57));
-   
-   //nose
-   fill(0);
-   triangle(200,195,188,215,212,215);
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-}
-
-float x=0;
-PImage img;
-void setup(){
-  size(395,366);
   
   img = loadImage("unnamed.jpg");
   
-
 }
 
 void draw(){
    background(35,143,244);
-  
+   translate(199,175);
   //if (keyPressed){
    x=x+1;
    //image(img,0,0);
- 
+   //scale(0.5);
    //star
-   translate(199,175);
-  // rotate(radians(x));
+   rotate(radians(x));
    
    stroke(0);
    noFill();
@@ -202,21 +57,21 @@ void draw(){
    beginShape();
    vertex(-131,76);
    vertex(-54,95);
-   vertex(0,150);
+   vertex(0,151);
    vertex(0,1);
    endShape();
    
    fill(200,93,58);
    beginShape();
-   vertex(0,150);
-   vertex(56,94);
-   vertex(132,76);
+   vertex(0,152);
+   vertex(56,95);
+   vertex(133,76);
    vertex(0,1);
    endShape();
    
    fill(255,180,31);
    beginShape();
-   vertex(131,75);
+   vertex(133,76  );
    vertex(110,0);
    vertex(132,-75);
    vertex(0,1);
@@ -225,13 +80,14 @@ void draw(){
    fill(255,225,91);
    beginShape();
    vertex(132,-75);
-   vertex(56,-93);
+   vertex(55,-94);
    vertex(0,-150);
    vertex(0,1);
    endShape();
- // }
+ 
+   rotate(radians(-x));
+   translate(-199,-175);
    
-  //rotate(radians(x));
    //middle yellow circle
    fill(255,225,91);
    ellipse(199,176,188,188);
@@ -277,5 +133,6 @@ void draw(){
    //nose
    fill(0);
    triangle(200,195,188,215,212,215);
+   
    
 }
