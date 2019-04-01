@@ -8,18 +8,33 @@ void setup(){
 }
 
 void draw(){
+  
    background(35,143,244);
-   translate(199,175);
+   if (keyPressed){
+   image(img,0,0); 
+   }
+   //wings
+   fill(255,255,255);
+   stroke(0);
+   strokeWeight(13);
+   line(112,112,20,74);
+   line(286,112,377,74);
+   arc(112,112,202,200,radians(140),radians(200));
+   arc(120,177,208,208,radians(130),radians(185));
+   arc(286,112,202,200,radians(-20),radians(40));
+   arc(278,177,208,208,radians(-5),radians(50));
+     //fill balnk spot
+     noStroke();
+     rect(42,140,314,50);
   //if (keyPressed){
    x=x+1;
-   //image(img,0,0);
-   //scale(0.5);
+   //scale(0.75);
    //star
+   translate(199,175);
    rotate(radians(x));
-   
    stroke(0);
-   noFill();
    strokeWeight(12);
+   noFill();
    beginShape();
    vertex(0,-159);
    vertex(-58,-100);
@@ -135,4 +150,5 @@ void draw(){
    triangle(200,195,188,215,212,215);
    
    
+  //}
 }
