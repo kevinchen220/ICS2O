@@ -8,10 +8,10 @@ void setup(){
 }
 
 void draw(){
-  
    background(35,143,244);
+   //hold key longer to get best spinning result
    if (keyPressed){
-   image(img,0,0); 
+   //image(img,0,0); 
    }
    //wings
    fill(255,255,255);
@@ -26,12 +26,11 @@ void draw(){
      //fill balnk spot
      noStroke();
      rect(42,140,314,50);
-  //if (keyPressed){
-   x=x+1;
-   //scale(0.75);
-   //star
+     
    translate(199,175);
-   rotate(radians(x));
+  
+   //star
+   
    stroke(0);
    strokeWeight(12);
    noFill();
@@ -100,7 +99,9 @@ void draw(){
    vertex(0,1);
    endShape();
  
-   rotate(radians(-x));
+   if (keyPressed){
+     rotate(radians(-x));
+   }
    translate(-199,-175);
    
    //middle yellow circle
