@@ -1,0 +1,158 @@
+float x=0;
+PImage img;
+void setup(){
+  size(395,366);
+  
+  img = loadImage("unnamed.jpg");
+  
+}
+
+void draw(){
+   background(35,143,244);
+   //hold key longer to get best spinning result
+   if (keyPressed){
+   //image(img,0,0); 
+   }
+   //wings
+   fill(255,255,255);
+   stroke(0);
+   strokeWeight(13);
+   line(112,112,20,74);
+   line(286,112,377,74);
+   arc(112,112,202,200,radians(140),radians(200));
+   arc(120,177,208,208,radians(130),radians(185));
+   arc(286,112,202,200,radians(-20),radians(40));
+   arc(278,177,208,208,radians(-5),radians(50));
+     //fill balnk spot
+     noStroke();
+     rect(42,140,314,50);
+     
+   translate(199,175);
+  if (keyPressed){
+   x=x+1;
+   rotate(radians(x));
+  }
+   //star
+   
+   stroke(0);
+   strokeWeight(12);
+   noFill();
+   beginShape();
+   vertex(0,-159);
+   vertex(-58,-100);
+   vertex(-139,-80);
+   vertex(-116,0);
+   vertex(-139,80);
+   vertex(-58,100);
+   vertex(0,159);
+   vertex(58,100);
+   vertex(139,80);
+   vertex(116,0);
+   vertex(139,-80);
+   vertex(58,-100);
+   endShape(CLOSE);
+   
+   //colour for star
+   noStroke();
+   fill(255,255,255);
+   beginShape();
+   vertex(0,-150);
+   vertex(-54,-94);
+   vertex(-131,-75);
+   vertex(0,1);
+   endShape();
+   
+   fill(255,225,91);
+   beginShape();
+   vertex(-131,-75);
+   vertex(-109,0);
+   vertex(-131,76);
+   vertex(0,1);
+   endShape();
+   
+   fill(255,180,31);
+   beginShape();
+   vertex(-131,76);
+   vertex(-54,95);
+   vertex(0,151);
+   vertex(0,1);
+   endShape();
+   
+   fill(200,93,58);
+   beginShape();
+   vertex(0,152);
+   vertex(56,95);
+   vertex(133,76);
+   vertex(0,1);
+   endShape();
+   
+   fill(255,180,31);
+   beginShape();
+   vertex(133,76  );
+   vertex(110,0);
+   vertex(132,-75);
+   vertex(0,1);
+   endShape();
+   
+   fill(255,225,91);
+   beginShape();
+   vertex(132,-75);
+   vertex(55,-94);
+   vertex(0,-150);
+   vertex(0,1);
+   endShape();
+ 
+   if (keyPressed){
+     rotate(radians(-x));
+   }
+   translate(-199,-175);
+   
+   //middle yellow circle
+   fill(255,225,91);
+   ellipse(199,176,188,188);
+   
+   //middle black circle
+   fill(0,0,0);
+   stroke(0,0,0);
+   ellipse(199,172,172,168);
+   
+   //middle face
+   fill(255,190,34);
+   stroke(255,190,34);
+   arc(199,171,142,136,radians(180),radians(360));
+   arc(199,170,142,118,0,PI);
+   rect(165,200,68,37,5);
+   
+   //eyes
+   fill(0,0,0);
+   noStroke();
+   ellipse(166,187,44.5,46);
+   ellipse(235,187,44.5,46);
+   
+   //eyebrows
+   rotate(radians(44));
+   fill(0,0,0);
+   rect(239,-17.5,14,10.5);
+   ellipse(239,-12.25,10.5,10.5);
+   ellipse(253,-12.25,10.5,10.5);
+   
+   rotate(radians(1));
+   rect(261,-44,10.5,14);
+   ellipse(266.25,-44,10.5,10.5);
+   ellipse(266.25,-30,10.5,10.5);
+     
+   //light spot on head
+   rotate(radians(12));
+   fill(255,255,255);
+   ellipse(201,-68,36,54);
+  
+  //reset rotation to 0
+   rotate(radians(-57));
+   
+   //nose
+   fill(0);
+   triangle(200,195,188,215,212,215);
+   
+   
+  //}
+}
