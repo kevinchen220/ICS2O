@@ -1,4 +1,3 @@
-float x=0;
 PImage img;
 void setup(){
   size(395,366);
@@ -13,6 +12,30 @@ void draw(){
    if (keyPressed){
    //image(img,0,0); 
    }
+   //background pictures
+   
+   //Shaded area
+   ellipse(97,210,150,150);
+   ellipse(301,210,150,150);
+   
+   translate(199,175);
+   beginShape();
+   vertex(-131,116);
+   vertex(-54,135);
+   vertex(0,191);
+   vertex(0,1);
+   vertex(-110,40);
+   endShape();
+   
+   beginShape();
+   vertex(0,192);
+   vertex(56,135);
+   vertex(133,116);
+   vertex(110,40);
+   vertex(0,1);
+   endShape();
+   
+   translate(-199,-175);
    //wings
    fill(255,255,255);
    stroke(0);
@@ -23,14 +46,15 @@ void draw(){
    arc(120,177,208,208,radians(130),radians(185));
    arc(286,112,202,200,radians(-20),radians(40));
    arc(278,177,208,208,radians(-5),radians(50));
-     //fill balnk spot
-     noStroke();
-     rect(42,140,314,50);
-     
-   translate(199,175);
-  
-   //star
    
+   //fill balnk spot
+   noStroke();
+   rect(42,140,314,50);
+   
+   //shift origin
+   translate(199,175);
+   
+   //star
    stroke(0);
    strokeWeight(12);
    noFill();
@@ -99,11 +123,9 @@ void draw(){
    vertex(0,1);
    endShape();
  
-   if (keyPressed){
-     rotate(radians(-x));
-   }
+   //Shift orgin
    translate(-199,-175);
-   
+     
    //middle yellow circle
    fill(255,225,91);
    ellipse(199,176,188,188);
@@ -151,5 +173,4 @@ void draw(){
    triangle(200,195,188,215,212,215);
    
    
-  //}
 }
