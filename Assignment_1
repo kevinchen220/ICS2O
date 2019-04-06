@@ -8,13 +8,123 @@ void setup(){
 
 void draw(){
    background(35,143,244);
-   //hold key longer to get best spinning result
    if (keyPressed){
-   //image(img,0,0); 
+   image(img,0,0); 
    }
    //background pictures
+   fill(45,173,246);
+   
+   //Star above left wing
+   beginShape();
+   vertex(42,77);
+   vertex(53,71);
+   vertex(66,47);
+   vertex(90,60);
+   vertex(119,60);
+   vertex(119,75);
+   vertex(68,89);
+   endShape();
+   
+   //Star above rigth wing
+   beginShape();
+   vertex(290,77);
+   vertex(304,71);
+   vertex(317,47);
+   vertex(340,60);
+   vertex(369,60);
+   vertex(369,72);
+   vertex(331,87);
+   endShape();
+   
+   //Shape under left wing
+   beginShape();
+   curveVertex(36,251);
+   curveVertex(36,251);
+   curveVertex(31,261);
+   curveVertex(32,271);
+   curveVertex(39,278);
+   curveVertex(76,291);
+   vertex(76,291);
+   vertex(106,255);
+   endShape();
+   
+   //Gun at bottom left
+   beginShape();
+   vertex(54,366);
+   vertex(97,349);
+   curveVertex(97,349);
+   curveVertex(99,331);
+   curveVertex(119,342);
+   curveVertex(119,342);
+   vertex(130,367);
+   endShape();
+   
+   //Gun at bottom right
+   beginShape();
+   vertex(305,366);
+   vertex(347,349);
+   curveVertex(347,349);
+   curveVertex(349,331);
+   curveVertex(369,342);
+   curveVertex(369,342);
+   vertex(380,367);
+   endShape();
+   
+   //Star under big star
+   beginShape();
+   vertex(156,321);
+   vertex(164,336);
+   vertex(163,363);
+   vertex(192,363);
+   vertex(195,366);
+   vertex(223,366);
+   vertex(231,353);
+   vertex(254,339);
+   vertex(244,320);
+   endShape();
+   
+   //Shape under right wing
+   beginShape();
+   vertex(247,254);
+   vertex(335,291);
+   curveVertex(335,291);
+   curveVertex(342,293);
+   curveVertex(351,289);
+   curveVertex(355,285);
+   vertex(355,285);
+   vertex(367,253);
+   vertex(319,225);
+   ellipse(363,238,32,32);
+   endShape();
+   
+   //Gun on top of big star
+   beginShape();
+   vertex(168,35);
+   vertex(165,28);
+   curveVertex(165,29);
+   curveVertex(163,28);
+   curveVertex(160,26);
+   curveVertex(157,23);
+   curveVertex(157,19);
+   curveVertex(157,17);
+   curveVertex(159,15);
+   curveVertex(161,15);
+   curveVertex(163,16);
+   curveVertex(166,17);
+   curveVertex(171,14);
+   curveVertex(172,12);
+   vertex(171,7);
+   vertex(186,0);
+   vertex(249,0);
+   vertex(254,14);
+   vertex(224,26);
+   vertex(227,34);
+   vertex(190,54);
+   endShape();
+   ellipse(177,58,47,47);
    
    //Shaded area
+   fill(0);
    ellipse(97,210,150,150);
    ellipse(301,210,150,150);
    
@@ -70,6 +180,110 @@ void draw(){
    vertex(139,80);
    vertex(116,0);
    vertex(139,-80);
+   vertex(58,-100);
+   endShape(CLOSE);
+   
+   //colour for star
+   noStroke();
+   fill(255,255,255);
+   beginShape();
+   vertex(0,-150);
+   vertex(-54,-94);
+   vertex(-131,-75);
+   vertex(0,1);
+   endShape();
+   
+   fill(255,225,91);
+   beginShape();
+   vertex(-131,-75);
+   vertex(-109,0);
+   vertex(-131,76);
+   vertex(0,1);
+   endShape();
+   
+   fill(255,180,31);
+   beginShape();
+   vertex(-131,76);
+   vertex(-54,95);
+   vertex(0,151);
+   vertex(0,1);
+   endShape();
+   
+   fill(200,93,58);
+   beginShape();
+   vertex(0,152);
+   vertex(56,95);
+   vertex(133,76);
+   vertex(0,1);
+   endShape();
+   
+   fill(255,180,31);
+   beginShape();
+   vertex(133,76  );
+   vertex(110,0);
+   vertex(132,-75);
+   vertex(0,1);
+   endShape();
+   
+   fill(255,225,91);
+   beginShape();
+   vertex(132,-75);
+   vertex(55,-94);
+   vertex(0,-150);
+   vertex(0,1);
+   endShape();
+ 
+   //Shift orgin
+   translate(-199,-175);
+     
+   //middle yellow circle
+   fill(255,225,91);
+   ellipse(199,176,188,188);
+   
+   //middle black circle
+   fill(0,0,0);
+   stroke(0,0,0);
+   ellipse(199,172,172,168);
+   
+   //middle face
+   fill(255,190,34);
+   stroke(255,190,34);
+   arc(199,171,142,136,radians(180),radians(360));
+   arc(199,170,142,118,0,PI);
+   rect(165,200,68,37,5);
+   
+   //eyes
+   fill(0,0,0);
+   noStroke();
+   ellipse(166,187,44.5,46);
+   ellipse(235,187,44.5,46);
+   
+   //eyebrows
+   rotate(radians(44));
+   fill(0,0,0);
+   rect(239,-17.5,14,10.5);
+   ellipse(239,-12.25,10.5,10.5);
+   ellipse(253,-12.25,10.5,10.5);
+   
+   rotate(radians(1));
+   rect(261,-44,10.5,14);
+   ellipse(266.25,-44,10.5,10.5);
+   ellipse(266.25,-30,10.5,10.5);
+     
+   //light spot on head
+   rotate(radians(12));
+   fill(255,255,255);
+   ellipse(201,-68,36,54);
+  
+  //reset rotation to 0
+   rotate(radians(-57));
+   
+   //nose
+   fill(0);
+   triangle(200,195,188,215,212,215);
+   
+   
+}
    vertex(58,-100);
    endShape(CLOSE);
    
