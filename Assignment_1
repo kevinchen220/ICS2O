@@ -1,16 +1,16 @@
-PImage img;
+//PImage img;
 void setup(){
   size(395,366);
   
-  img = loadImage("unnamed.jpg");
+  //img = loadImage("unnamed.jpg");
   
 }
 
 void draw(){
    background(35,143,244);
-   if (keyPressed){
-   //image(img,0,0); 
-   }
+   //if (keyPressed){
+   ////image(img,0,0); 
+   //}
    //background pictures
    fill(45,173,246);
    
