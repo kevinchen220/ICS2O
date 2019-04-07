@@ -9,7 +9,7 @@ void setup(){
 void draw(){
    background(35,143,244);
    if (keyPressed){
-   image(img,0,0); 
+   //image(img,0,0); 
    }
    //background pictures
    fill(45,173,246);
@@ -123,12 +123,16 @@ void draw(){
    endShape();
    ellipse(177,58,47,47);
    
-   //Shaded area
+   //Shaded areas
+   
+   //Slight shade under wings
    fill(0);
    ellipse(97,210,150,150);
    ellipse(301,210,150,150);
    
    translate(199,175);
+   
+   //Bottom left shade under star
    beginShape();
    vertex(-131,116);
    vertex(-54,135);
@@ -137,6 +141,7 @@ void draw(){
    vertex(-110,40);
    endShape();
    
+   //Bottom right shade under star
    beginShape();
    vertex(0,192);
    vertex(56,135);
@@ -146,6 +151,7 @@ void draw(){
    endShape();
    
    translate(-199,-175);
+   
    //wings
    fill(255,255,255);
    stroke(0);
@@ -184,6 +190,8 @@ void draw(){
    endShape(CLOSE);
    
    //colour for star
+   
+   //Top left part
    noStroke();
    fill(255,255,255);
    beginShape();
@@ -193,6 +201,7 @@ void draw(){
    vertex(0,1);
    endShape();
    
+   //Left part
    fill(255,225,91);
    beginShape();
    vertex(-131,-75);
@@ -201,6 +210,7 @@ void draw(){
    vertex(0,1);
    endShape();
    
+   //Bottom left part
    fill(255,180,31);
    beginShape();
    vertex(-131,76);
@@ -209,6 +219,7 @@ void draw(){
    vertex(0,1);
    endShape();
    
+   //Bottom right part
    fill(200,93,58);
    beginShape();
    vertex(0,152);
@@ -217,6 +228,7 @@ void draw(){
    vertex(0,1);
    endShape();
    
+   //Right part
    fill(255,180,31);
    beginShape();
    vertex(133,76  );
@@ -225,6 +237,7 @@ void draw(){
    vertex(0,1);
    endShape();
    
+   //Top right part
    fill(255,225,91);
    beginShape();
    vertex(132,-75);
@@ -233,10 +246,10 @@ void draw(){
    vertex(0,1);
    endShape();
  
-   //Shift orgin
+ 
    translate(-199,-175);
      
-   //middle yellow circle
+   //middle yellow circle shade
    fill(255,225,91);
    ellipse(199,176,188,188);
    
@@ -258,13 +271,14 @@ void draw(){
    ellipse(166,187,44.5,46);
    ellipse(235,187,44.5,46);
    
-   //eyebrows
+   //left eyebrows
    rotate(radians(44));
    fill(0,0,0);
    rect(239,-17.5,14,10.5);
    ellipse(239,-12.25,10.5,10.5);
    ellipse(253,-12.25,10.5,10.5);
    
+   //right eyebrows
    rotate(radians(1));
    rect(261,-44,10.5,14);
    ellipse(266.25,-44,10.5,10.5);
@@ -275,111 +289,7 @@ void draw(){
    fill(255,255,255);
    ellipse(201,-68,36,54);
   
-  //reset rotation to 0
-   rotate(radians(-57));
-   
-   //nose
-   fill(0);
-   triangle(200,195,188,215,212,215);
-   
-   
-}
-   vertex(58,-100);
-   endShape(CLOSE);
-   
-   //colour for star
-   noStroke();
-   fill(255,255,255);
-   beginShape();
-   vertex(0,-150);
-   vertex(-54,-94);
-   vertex(-131,-75);
-   vertex(0,1);
-   endShape();
-   
-   fill(255,225,91);
-   beginShape();
-   vertex(-131,-75);
-   vertex(-109,0);
-   vertex(-131,76);
-   vertex(0,1);
-   endShape();
-   
-   fill(255,180,31);
-   beginShape();
-   vertex(-131,76);
-   vertex(-54,95);
-   vertex(0,151);
-   vertex(0,1);
-   endShape();
-   
-   fill(200,93,58);
-   beginShape();
-   vertex(0,152);
-   vertex(56,95);
-   vertex(133,76);
-   vertex(0,1);
-   endShape();
-   
-   fill(255,180,31);
-   beginShape();
-   vertex(133,76  );
-   vertex(110,0);
-   vertex(132,-75);
-   vertex(0,1);
-   endShape();
-   
-   fill(255,225,91);
-   beginShape();
-   vertex(132,-75);
-   vertex(55,-94);
-   vertex(0,-150);
-   vertex(0,1);
-   endShape();
- 
-   //Shift orgin
-   translate(-199,-175);
-     
-   //middle yellow circle
-   fill(255,225,91);
-   ellipse(199,176,188,188);
-   
-   //middle black circle
-   fill(0,0,0);
-   stroke(0,0,0);
-   ellipse(199,172,172,168);
-   
-   //middle face
-   fill(255,190,34);
-   stroke(255,190,34);
-   arc(199,171,142,136,radians(180),radians(360));
-   arc(199,170,142,118,0,PI);
-   rect(165,200,68,37,5);
-   
-   //eyes
-   fill(0,0,0);
-   noStroke();
-   ellipse(166,187,44.5,46);
-   ellipse(235,187,44.5,46);
-   
-   //eyebrows
-   rotate(radians(44));
-   fill(0,0,0);
-   rect(239,-17.5,14,10.5);
-   ellipse(239,-12.25,10.5,10.5);
-   ellipse(253,-12.25,10.5,10.5);
-   
-   rotate(radians(1));
-   rect(261,-44,10.5,14);
-   ellipse(266.25,-44,10.5,10.5);
-   ellipse(266.25,-30,10.5,10.5);
-     
-   //light spot on head
-   rotate(radians(12));
-   fill(255,255,255);
-   ellipse(201,-68,36,54);
-  
-  //reset rotation to 0
+   //reset rotation to 0
    rotate(radians(-57));
    
    //nose
