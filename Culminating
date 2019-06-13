@@ -1,9 +1,19 @@
+//background
+float bc=0;
+float bp=5;
+float bcounter=1;
+
 //color
 float kc=0;
+float hc=63.75;
+float hcolor=1;
 float ec=127.5;
 float ecolor=1;
 float nc=191.25;
 float ncolor=1;
+
+float hx=650;
+float hy=0;
 
 float ki=55;
 float kii=420;
@@ -35,119 +45,151 @@ float nncy=300;
 void setup() {
   size(1400, 550);
   colorMode(HSB);
-  background(0, 0, 0);
+	background(bc, 0, bc);
+  
 }
 void draw() {
-  noStroke();
+	noStroke();
+  fill(255, 0, 0);
+ 	ellipse(mouseX, mouseY, 20, 20);
+	
   fill(0, 0, 0);
   rect(-1, -1, 291, 552);
   k();
+	h();
   e();
   n();
-}
-
-void k() {
-  stroke(2*abs(kc)/3.1, 255, 255);
-  fill(2*abs(kc)/3.1, 255, 255);
-  kc+=s;
-	
-	rect (50,255,20,25);
-  for (float i=ki; i<=kii; i+=1) {
-    rect (50, i, 20, 50);
   }
-  ki+=kip;
-  kii-=kip;
-  // if (ki>=kii) {
-  //   kip=-3.4;
-  // } else if (ki<=55) {
-  //   kip=3.4;
+
+  // void keyReleased() {
+  //   if (bcounter==0) {
+  //     bcounter=1;
+  //   } else {
+  //     bcounter=0;
+  //   }
   // }
 
-  int kk=71;
-  int kk2=190;
-  while (kk<260) {
-    triangle(kk, kk2+70, kk-20, kk2+90, kk+20, kk2+90);
-    kk+=10;
-    kk2-=kp;
-  }
-	kp-=kpp;
-  int kk3=71;
-  int kk4=190;
-  while (kk3<260) {
-    triangle(kk3, kk4+70, kk3-20, kk4+90, kk3+20, kk4+90);
-    kk3+=10;
-    kk4+=kp;
-  }
-  kp-=kpp;
-  if (kp<=0) {
-    kpp=-0.1;
-		kip=-3.4;
-  } else if (kp>=11) {
-    kpp=0.1;
-		kip=3.4;
-  }
-}
+  void k() {
+    stroke(2*abs(kc)/3.1, 255, 255);
+    fill(2*abs(kc)/3.1, 255, 255);
+    kc+=s;
 
-void e() {
-  stroke(ec, 255, 255);
-  ec+=ecolor;
-  if (ec>185) {
-    ecolor=-1;
-  } else if (ec<127.5) {
-    ecolor=1;
-  }
-  translate(1000, 350);
-  rotate(radians(d));
-  line(0, 0, 100, 0);
-  if (d<=-320) {
-    s=1;
-  } else if (d>=-2) {
-    s=-1;
-  }
-  rotate(-radians(d));
-  d+=s; 
-	noStroke();
-	fill(0);
-	arc (0,-20,120,120,radians(-180),0);
-	arc (0,0,140,140,0,radians(180));
-}
+    rect (50, 255, 20, 25);
+    for (float i=ki; i<=kii; i+=1) {
+      rect (50, i, 20, 50);
+    }
+    ki+=kip;
+    kii-=kip;
+    // if (ki>=kii) {
+    //   kip=-3.4;
+    // } else if (ki<=55) {
+    //   kip=3.4;
+    // }
 
-void n() {
-  fill(nc, 255, 255);
-  stroke(nc, 255, 255);
-  nc+=ncolor;
-  if (nc>255) {
-    ncolor=-1;
-  } else if (nc<191.25) {
-    ncolor=1;
+    int kk=71;
+    int kk2=190;
+    while (kk<260) {
+      triangle(kk, kk2+70, kk-20, kk2+90, kk+20, kk2+90);
+      kk+=10;
+      kk2-=kp;
+    }
+    kp-=kpp;
+    int kk3=71;
+    int kk4=190;
+    while (kk3<260) {
+      triangle(kk3, kk4+70, kk3-20, kk4+90, kk3+20, kk4+90);
+      kk3+=10;
+      kk4+=kp;
+    }
+    kp-=kpp;
+    if (kp<=0) {
+      kpp=-0.1;
+      kip=-3.4;
+    } else if (kp>=11) {
+      kpp=0.1;
+      kip=3.4;
+    }
   }
-  translate(-800, -350);
-  ellipse(nx, ny, 25, 25);
-  ny+=nchange;
-  if (ny>=450) {
-    nchange=-20;
-  } else if (ny<=245) {
-    nchange=20;
-  } else if (ny<=300 && nchange==-20) {
-    ellipse(ncx, ncy, 25, 25);
-    ncy=ncx*ncx/200-21*ncx/2+11500/2;
-    ncx+=nncchange;
-    ellipse(nncx, nncy, 25, 25);
-    nncy=nncx*nncx/200-21*nncx/2+11500/2;
-    nncx+=ncchange;
+	
+	void h(){
+		noStroke();
+		fill(hc, 255, 255);
+    hc+=ecolor;
+    if (hc<63.75) {
+      ecolor=1;
+    } else if (hc>127.5) {
+      hcolor=-1;
+    }
+		for (int i=55;i<=420;i+=5){
+			rect(650,i,30,30);
+		}
+		for (int i=275;i<=420;i+=5){
+			rect(840,i,30,30);
+		}
+		ellipse(hx,hy,25,25);
+	}
+
+
+  void e() {
+    stroke(ec, 255, 255);
+    ec+=ecolor;
+    if (ec>185) {
+      ecolor=-1;
+    } else if (ec<127.5) {
+      ecolor=1;
+    }
+    translate(1000, 350);
+    rotate(radians(d));
+    line(0, 0, 100, 0);
+    if (d<=-320) {
+      s=1;
+    } else if (d>=-2) {
+      s=-1;
+    }
+    rotate(-radians(d));
+    d+=s; 
+    noStroke();
+    fill(0);
+    arc (0, -20, 120, 120, radians(-180), 0);
+    arc (0, 0, 140, 140, 0, radians(180));
   }
-  if (ncx<=950) {
-    nncchange=3;
-    ncchange=-3;
-  } else if (ncx>=1150) {
-    nncchange=-3;
-    ncchange=3;
+
+  void n() {
+    fill(nc, 255, 255);
+    stroke(nc, 255, 255);
+    nc+=ncolor;
+    if (nc>255) {
+      ncolor=-1;
+    } else if (nc<191.25) {
+      ncolor=1;
+    }
+    translate(-800, -350);
+    ellipse(nx, ny, 25, 25);
+    ny+=nchange;
+    if (ny>=450) {
+      nchange=-20;
+    } else if (ny<=245) {
+      nchange=20;
+    } else if (ny<=300 && nchange==-20) {
+      ellipse(ncx, ncy, 25, 25);
+      ncy=ncx*ncx/200-21*ncx/2+11500/2;
+      ncx+=nncchange;
+      ellipse(nncx, nncy, 25, 25);
+      nncy=nncx*nncx/200-21*nncx/2+11500/2;
+      nncx+=ncchange;
+    }
+    if (ncx<=950) {
+      nncchange=3;
+      ncchange=-3;
+    } else if (ncx>=1150) {
+      nncchange=-3;
+      ncchange=3;
+    }
+    ellipse(nnx, nny, 25, 25);
+    nny+=nnchange;
+    if (nny<=300) {
+      nnchange=20;
+    } else if (nny>=450) {
+      nnchange=-20;
+    }
   }
-  ellipse(nnx, nny, 25, 25);
-  nny+=nnchange;
-  if (nny<=300) {
-    nnchange=20;
-  } else if (nny>=450) {
-    nnchange=-20;
-  }
-}
